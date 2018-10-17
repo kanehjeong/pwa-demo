@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NotificationService } from '../core/notification/notification.service';
+import { NewsletterService } from '../core/newsletter/newsletter.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,9 @@ import { NotificationService } from '../core/notification/notification.service';
 })
 export class HomeComponent {
 
-  constructor(private notificationService: NotificationService) { }
+  constructor(private newsletterService: NewsletterService) { }
 
-  sayLytxOneRope(): void {
-    this.notificationService.notifySuccess('Lytx One Rope!');
+  async subscribeToNewsletter(): Promise<void> {
+    await this.newsletterService.subscribeToNewsletter();
   }
 }

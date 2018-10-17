@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:dist": "http-server -p 4201 -c-1 dist/pwa-demo",
+    "start:dist": "http-server -p 4201 -c-1 dist",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
