@@ -8,6 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutesModule } from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CoreModule } from './core/core.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ToastrModule.forRoot(),
     AppRoutesModule,
-    CoreModule
+    CoreModule,
+    MatButtonModule
   ],
   bootstrap: [AppComponent]
 })

@@ -20,9 +20,15 @@ export class ApplicationService {
   // could design this further into a specific kind of subscription
   async subscribeToApplication(): Promise<void> {
     console.log('Requesting Subscription Permission');
-    const sub = await this.swPush.requestSubscription({
-      serverPublicKey: this.VAPID_PUBLIC_KEY
-    });
+    let sub: PushSubscription;
+    try {
+      sub = await this.swPush.requestSubscription({
+        serverPublicKey: this.VAPID_PUBLIC_KEY
+      });
+    } catch (err) {
+      console.log(`FAILED SUBSCRIBE DUE TO FOLLOWING REASON: ${err}`);
+      return;
+    }
 
     console.log('Adding subscription');
     await this.addPushSubscriber(sub).toPromise();

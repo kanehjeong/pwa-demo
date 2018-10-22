@@ -1,5 +1,13 @@
-<button (click)="subscribeToApplication()">Subscribe</button>
+<div class="home-container">
+  <h1>PWA / Service Worker Demo</h1>
 
-<button (click)="getRandomNumbers()">Get Random Numbers</button>
+  <div class="home-content">
+    <button mat-raised-button (click)="subscribeToApplication()">Subscribe</button>
+  </div>
 
-<h3>{{ numbers?.join(', ') }}</h3>
+  <div class="home-content">
+    <button mat-raised-button (click)="getRandomNumbers()">Get Random Numbers</button>
+  </div>
+
+  <h3>{{ numbers?.join(', ') }}</h3>
+</div>
