@@ -22,5 +22,16 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "getNumbers",
+      "urls": ["https://kane-pwa.herokuapp.com/api/numbers"],
+      "cacheConfig": {
+        "maxSize": 3,
+        "maxAge": "7d",
+        "strategy": "freshness"
+      }
+    }
   ]
 }

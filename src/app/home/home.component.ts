@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NewsletterService } from '../core/newsletter/newsletter.service';
+import { ApplicationService } from '../core/application.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,15 @@ import { NewsletterService } from '../core/newsletter/newsletter.service';
 })
 export class HomeComponent {
 
-  constructor(private newsletterService: NewsletterService) { }
+  numbers: number[];
 
-  async subscribeToNewsletter(): Promise<void> {
-    await this.newsletterService.subscribeToNewsletter();
+  constructor(private applicationService: ApplicationService) { }
+
+  async getRandomNumbers(): Promise<void> {
+    this.numbers = await this.applicationService.getNumbers();
+  }
+
+  async subscribeToApplication(): Promise<void> {
+    await this.applicationService.subscribeToApplication();
   }
 }
